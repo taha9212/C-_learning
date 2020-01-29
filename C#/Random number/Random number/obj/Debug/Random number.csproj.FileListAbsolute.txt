@@ -1,0 +1,6 @@
+E:\Dot net\C#\Random number\Random number\bin\Debug\Random number.exe.config
+E:\Dot net\C#\Random number\Random number\bin\Debug\Random number.exe
+E:\Dot net\C#\Random number\Random number\bin\Debug\Random number.pdb
+E:\Dot net\C#\Random number\Random number\obj\Debug\Random number.csprojResolveAssemblyReference.cache
+E:\Dot net\C#\Random number\Random number\obj\Debug\Random number.exe
+E:\Dot net\C#\Random number\Random number\obj\Debug\Random number.pdb

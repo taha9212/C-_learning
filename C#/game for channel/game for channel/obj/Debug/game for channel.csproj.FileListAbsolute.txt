@@ -1,0 +1,6 @@
+E:\Dot net\C#\game for channel\game for channel\bin\Debug\game for channel.exe.config
+E:\Dot net\C#\game for channel\game for channel\bin\Debug\game for channel.exe
+E:\Dot net\C#\game for channel\game for channel\bin\Debug\game for channel.pdb
+E:\Dot net\C#\game for channel\game for channel\obj\Debug\game for channel.csprojResolveAssemblyReference.cache
+E:\Dot net\C#\game for channel\game for channel\obj\Debug\game for channel.exe
+E:\Dot net\C#\game for channel\game for channel\obj\Debug\game for channel.pdb
