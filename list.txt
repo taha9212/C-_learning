@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace list
+{
+    class Employee
+    {
+        public string get_name { get; set; }
+        public int get_id { get; set; }
+        public string get_gender { get; set; }
+        public int get_age { get; set; }
+        List<Employee> get_list;
+        Employee values;
+        public bool flag { get; set; }
+        public Employee()
+        {
+
+        }
+        public Employee(List<Employee> employee_list)
+        {
+            get_list = employee_list;
+        }
+
+        public Employee this[int get_id]
+            {
+                get
+                    {
+                        foreach(Employee value in get_list)
+                            {
+                            if (value.get_id == get_id)
+                                {
+                                    this.values = value;
+                                    flag = true;
+                                }
+                            }   
+                        return values;
+                    }
+            }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Employee> employee_list = new List<Employee>();
+            employee_list.Add(new Employee{ get_name = "taha", get_id = 1, get_age = 21, get_gender = "male"});
+            employee_list.Add(new Employee { get_name = "yasir", get_gender = "male", get_age = 22, get_id = 2});
+            employee_list.Add(new Employee { get_name = "wasey", get_gender = "male", get_age = 22, get_id = 3 });
+            Employee send_employee_list = new Employee(employee_list);
+            Console.Write("Enter Employee id: ");
+            int num = int.Parse(Console.ReadLine());
+            Employee result = send_employee_list[num];
+            if (send_employee_list.flag == true)
+            {
+                Console.WriteLine("Name : " + result.get_name);
+                Console.WriteLine("Age : " + result.get_age);
+                Console.WriteLine("Gender : " + result.get_gender);
+            }
+            else
+            {
+                Console.WriteLine("result not found");
+            }
+            Console.ReadKey();
+        }
+    }
+}

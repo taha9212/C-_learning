@@ -1,0 +1,130 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace networking_game
+{
+    class game
+    {
+        bool flag;
+        int sum = 0;
+        public game()
+        {
+
+        }
+
+        public bool check(int input)
+        {
+            int[] array = new int[8] { 128, 64, 34, 16, 8, 4, 2, 1 };
+            for (int i = 0; i < 8; i++)
+            {
+                if (array[i] == input)
+                {
+                    flag = true;
+                    break;
+                }
+                else
+                {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+
+        public int sumnum(int input)
+        {
+            sum = sum + input;
+            return sum;
+        }
+
+        public void win_dialoige()
+        {
+            Random generator = new Random();
+            sum = generator.Next(1, 4);
+            switch (sum)
+            {
+                case 1:
+                    Console.WriteLine("Correct answer");
+                    break;
+                case 2:
+                    Console.WriteLine("well played ");
+                    break;
+                case 3:
+                    Console.WriteLine("you won");
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void loss_dialoige()
+        {
+            Random generator = new Random();
+            sum = generator.Next(1, 4);
+            switch (sum)
+            {
+                case 1:
+                    Console.WriteLine("wrong answer");
+                    break;
+                case 2:
+                    Console.WriteLine("did not well played ");
+                    break;
+                case 3:
+                    Console.WriteLine("you lose");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random generator = new Random();
+            int num = generator.Next(1, 255);
+            Console.WriteLine("128 64 32 16 8 4 2 1");
+            Console.WriteLine("choose the given values to calculate the sum of: "  +num);
+            bool flag = true;
+            int result = 0;
+            game games = new game();
+            while(flag)
+            {
+                Console.WriteLine("Enter a value");
+                int input = Convert.ToInt32(Console.ReadLine());
+                bool flag2 = games.check(input);
+
+                if (flag2 == true)
+                {
+                    result = games.sumnum(input);
+                    Console.WriteLine("Press f is you done entering values, else just press enter.");
+                    string option = Console.ReadLine();
+                    if (option == "f")
+                    {
+                        flag = false;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please insert the value form the given values.");
+                }
+
+            }
+            if (result == num)
+            {
+                games.win_dialoige();
+            }
+            else
+            {
+                games.loss_dialoige();
+            }
+            Console.ReadKey();
+        }
+    }
+}
