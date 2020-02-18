@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Stack
+{
+    class stack
+    {
+        List<int> list = new List<int>();
+        int index = 0;
+
+        public void push(int num)
+        {
+            list.Add(num);
+            index++;
+        }
+        public void pop()
+        {
+            list.RemoveAt(index-1);
+            index--;
+        }
+        public void print_stack()
+        {
+            foreach (int show in list)
+            {
+                Console.WriteLine(show);
+            }
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            stack Stack = new stack();
+            Console.WriteLine("PUSh");
+            Stack.push(10);
+            Stack.push(20);
+            Stack.push(30);
+
+            Stack.print_stack();
+            Console.WriteLine("\nPOP");
+
+            Stack.pop();
+            Stack.pop();
+
+            Stack.print_stack();
+            Console.ReadKey();
+        }
+    }
+}
